@@ -99,7 +99,7 @@ def cci(a,b,c,d):
         result[i] = (tp[i]-atp[i])/(0.015*md[i])
     return result[d-1:]
 #
-# Accumulation Distribution Line
+# Accumulation/Distribution Line
 # a is array of high prices, b is array of low prices,
 # c is array of closing prices, d is the trading volume
 def adl(a,b,c,d):
