@@ -24,3 +24,7 @@ The rsi function calculates the [Relative Strength Index](http://stockcharts.com
 ### cci
 
 The cci function calculates the [Commodity Channel Index](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:commodity_channel_index_cci).  The function requires four parameters: an array of high prices, and array of low prices, and array of closing prices, and a number of time periods for averaging.  The number of time periods is adjustable, but a value of 20 is typically used.  The function returns the calculated cci values in an array that is shorter than the length of the price array by N-1, where N is the number of periods used for averaging.
+
+### adl
+
+The adl function calculates the [Accumulation Distribution Line](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:accumulation_distribution_line).  The function requires four parameters: an array of high prices, and array of low prices, and array of closing prices, and a trading volume.  The function returns the adl values as an array whose length is equal to the length of the price arrays.
