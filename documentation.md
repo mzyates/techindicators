@@ -19,4 +19,8 @@ The atr function is [average true range](http://stockcharts.com/school/doku.php?
 
 ### rsi
 
-The rsi function calculates the [Relative Strength Index](https://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi).  The function requires two parameters: an array of prices, and a number of time periods for averaging.  The number of time periods is adjustable, but 14 is typically used.  The RSI is returned as an array that is shorter than the price array by N, where N is the number of periods used for averaging.
+The rsi function calculates the [Relative Strength Index](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi).  The function requires two parameters: an array of prices, and a number of time periods for averaging.  The number of time periods is adjustable, but 14 is typically used.  The RSI is returned as an array that is shorter than the price array by N, where N is the number of periods used for averaging.
+
+### cci
+
+The cci function calculates the [Commodity Channel Index](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:commodity_channel_index_cci).  The function requires four parameters: an array of high prices, and array of low prices, and array of closing prices, and a number of time periods for averaging.  The number of time periods is adjustable, but a value of 20 is typically used.  The function returns the calculated cci values in an array that is shorter than the length of the price array by N-1, where N is the number of periods used for averaging.
