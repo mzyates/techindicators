@@ -22,3 +22,7 @@ The kama function is the [Kaufman adaptive moving average](http://stockcharts.co
 ### atr
 
 The atr function is [average true range](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_true_range_atr)  The function requires four parameters: an array of high prices, an array of low prices, and array of closing prices, and a time period for averaging.  The time period is adjustable, but 14 is typically used.  The average true range is returned as an array shorter than the price array by N-1, where N is the time period used for averaging.
+
+### rsi
+
+The rsi function calculates the [Relative Strength Index](https://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi).  The function requires two parameters: an array of prices, and a number of time periods for averaging.  The number of time periods is adjustable, but 14 is typically used.  The RSI is returned as an array that is shorter than the price array by N, where N is the number of periods used for averaging.
