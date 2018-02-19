@@ -1,5 +1,5 @@
 # techindicators
-Functions to calculate technical indicators from stock price data using Numpy.
+Python functions to calculate technical indicators from stock price data using Numpy.
 
 ## Purpose
 
