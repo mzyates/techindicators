@@ -1,3 +1,4 @@
+import numpy as np
 #
 # Simple Moving Average
 # a is an array of prices, b is a period for averaging
