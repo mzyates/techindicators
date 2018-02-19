@@ -1,4 +1,3 @@
-import numpy as np
 #
 # Simple Moving Average
 # a is an array of prices, b is a period for averaging
@@ -56,6 +55,7 @@ def atr(a,b,c,d):
     for i in range(1,len(a)-d+1):
         result[i] = (result[i-1]*(d-1)+tr[i+d-1])/d
     return result
+#
 # Relative Strength Index
 # a is an array of prices, b is the period for averaging
 def rsi(a,b):
@@ -84,4 +84,17 @@ def rsi(a,b):
     for i in range(b,len(a)):
         result[i] = 100-100/(1+ag[i]/al[i])
     return result[b:]
-
+#
+# Commodity Channel Index
+# a is array of high prices, b is array of low prices,
+# c is array of closing prices, d is the number of periods
+def cci(a,b,c,d):
+    tp = (a+b+c)/3 # typical price
+    atp = np.zeros(len(a)) # average typical price
+    md = np.zeros(len(a)) # mean deviation
+    result = np.zeros(len(a))
+    for i in range(d-1,len(a)):
+        atp[i] = np.sum(tp[i-(d-1):i+1])/d
+        md[i] = np.sum(np.fabs(atp[i]-tp[i-(d-1):i+1]))/d
+        result[i] = (tp[i]-atp[i])/(0.015*md[i])
+    return result[d-1:]
