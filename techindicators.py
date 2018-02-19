@@ -98,3 +98,15 @@ def cci(a,b,c,d):
         md[i] = np.sum(np.fabs(atp[i]-tp[i-(d-1):i+1]))/d
         result[i] = (tp[i]-atp[i])/(0.015*md[i])
     return result[d-1:]
+#
+# Accumulation Distribution Line
+# a is array of high prices, b is array of low prices,
+# c is array of closing prices, d is the trading volume
+def adl(a,b,c,d):
+    mfm = ((c-b)-(a-c))/(a-b) # Money flow multiplier
+    mfv = mfm*d # Money flow volume
+    result = np.zeros(len(a))
+    result[0] = mfv[0]
+    for i in range(1,len(a)):
+        result[i] = np.sum(mfv[0:i+1])
+    return result
