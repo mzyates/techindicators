@@ -56,5 +56,32 @@ def atr(a,b,c,d):
     for i in range(1,len(a)-d+1):
         result[i] = (result[i-1]*(d-1)+tr[i+d-1])/d
     return result
-
+# Relative Strength Index
+# a is an array of prices, b is the period for averaging
+def rsi(a,b):
+    change = np.zeros(len(a))
+    gain = np.zeros(len(a))
+    loss = np.zeros(len(a))
+    ag = np.zeros(len(a))
+    al = np.zeros(len(a))
+    result = np.zeros(len(a))
+    for i in range(1,len(a)):
+        change[i] = a[i]-a[i-1]
+        if change[i] == 0:
+            gain[i] = 0
+            loss[i] = 0
+        if change[i] < 0:
+            gain[i] = 0
+            loss[i] = np.fabs(change[i])
+        if change[i] > 0:
+            gain[i] = change[i]
+            loss[i] = 0
+    ag[b] = np.sum(gain[1:b+1])/b# initial average gain
+    al[b] = np.sum(loss[1:b+1])/b# initial average loss
+    for i in range(b+1,len(a)):
+        ag[i] = (ag[i-1]*(b-1)+gain[i])/b
+        al[i] = (al[i-1]*(b-1)+loss[i])/b
+    for i in range(b,len(a)):
+        result[i] = 100-100/(1+ag[i]/al[i])
+    return result[b:]
 
