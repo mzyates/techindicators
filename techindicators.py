@@ -51,7 +51,6 @@ def atr(a,b,c,d):
         hpc = np.fabs(a[i]-c[i-1])
         lpc = np.fabs(b[i]-c[i-1])
         tr[i] = np.amax(np.array([hl,hpc,lpc]))
-    print(tr)
     result[0] = np.sum(tr[0:d])/d
     for i in range(1,len(a)-d+1):
         result[i] = (result[i-1]*(d-1)+tr[i+d-1])/d
