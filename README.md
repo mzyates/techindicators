@@ -9,4 +9,4 @@ These Python functions calculate various technical indicators from price time se
 
 The documentation file has a list of the included function names along with a brief description of their use.  Links are provided in the documentation file for obtaining more information.  An example Jupyter notebook has been created to demonstrate the use of the functions, plotting data, and printing results.  To use the example notebook, download the following three files: techindicators.py, example_data.csv, and example_notebook.ipynb.  Place all three files in the same directory.  Then, open the example notebook file using the Jupyter client in order to execute and modify the code in the notebook file.
 
-NOTE: You must first have Numpy, Matplotlib, Jupyter, and Datetime modules installed, and the Python code was developed using Python version 3.6.
+NOTE: You must first have Numpy, Matplotlib, Jupyter, and Datetime modules installed. The Python code was developed using Python version 3.6.
