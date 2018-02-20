@@ -110,3 +110,11 @@ def adl(a,b,c,d):
     for i in range(1,len(a)):
         result[i] = np.sum(mfv[0:i+1])
     return result
+#
+# Moving Average Convergence/Divergence
+# a is an array of prices, b is the numer of periods for fast EMA
+# c is number of periods for slow EMA, d is number of periods for signal line
+def macd(a,b,c,d):
+    line = ema(a,b)[c-b:]-ema(a,c)
+    signal = ema(line,d)
+    return line,signal
