@@ -118,3 +118,18 @@ def macd(a,b,c,d):
     line = ema(a,b)[c-b:]-ema(a,c)
     signal = ema(line,d)
     return line,signal
+#
+# Keltner Channels
+# a, b, and c are high, low, and close price arrays
+# d is numer of periods for center line EMA
+# e is multiplier for ATR, and f is period for ATR
+def kelt(a,b,c,d,e,f):
+    center = ema(c,d)
+    if d>f:
+        upper = center+e*atr(a,b,c,f)[d-f:]
+        lower = center-e*atr(a,b,c,f)[d-f:]
+    if f>d:
+        upper = center[f-d:]+e*atr(a,b,c,f)
+        lower = center[f-d:]+e*atr(a,b,c,f)
+    return lower,center,upper
+#
