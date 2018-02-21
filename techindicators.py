@@ -113,7 +113,8 @@ def adl(a,b,c,d):
 #
 # Moving Average Convergence/Divergence
 # a is an array of prices, b is the numer of periods for fast EMA
-# c is number of periods for slow EMA, d is number of periods for signal line
+# c is number of periods for slow EMA, 
+# d is number of periods for signal line
 def macd(a,b,c,d):
     line = ema(a,b)[c-b:]-ema(a,c)
     signal = ema(line,d)
@@ -128,7 +129,7 @@ def kelt(a,b,c,d,e,f):
     if d>f:
         upper = center+e*atr(a,b,c,f)[d-f:]
         lower = center-e*atr(a,b,c,f)[d-f:]
-    if f>d:
+    if f>=d:
         upper = center[f-d:]+e*atr(a,b,c,f)
         lower = center[f-d:]+e*atr(a,b,c,f)
     return lower,center,upper
@@ -141,3 +142,18 @@ def rstd(a,b):
         result[i] = np.std(a[i:i+b],ddof=0)
     return result
 #
+# Bollinger Bands
+# a is an array of prices, b is number of periods used 
+# for the SMA calculation, c is the multiplier for the 
+# standard deviation, d is the number of periods for
+# calculating the standard deviation
+def boll(a,b,c,d):
+    stdboll = rstd(a,d)
+    center = sma(a,b)
+    if b>d:
+        upper = center+c*stdboll[b-d:]
+        lower = center-c*stdboll[b-d:]
+    if d>=b:
+        upper = center[d-b:]+c*stdboll
+        lower = center[d-b:]-c*stdboll
+    return lower,center,upper
