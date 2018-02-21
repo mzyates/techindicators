@@ -133,3 +133,11 @@ def kelt(a,b,c,d,e,f):
         lower = center[f-d:]+e*atr(a,b,c,f)
     return lower,center,upper
 #
+# Rolling standard deviation
+# a is an array of prices, b is number of periods
+def rstd(a,b):
+    result = np.zeros(len(a)-b+1)
+    for i in range(len(a)-b+1):
+        result[i] = np.std(a[i:i+b],ddof=0)
+    return result
+#
