@@ -9,4 +9,12 @@ These Python functions calculate various technical indicators from price time se
 
 The documentation file has a list of the included function names along with a brief description of their use.  Links are provided in the documentation file for obtaining more information.  An example Jupyter notebook has been created to demonstrate the use of the functions, plotting data, and printing results.  To use the example notebook, download the following three files: techindicators.py, example_data.csv, and example_notebook.ipynb.  Place all three files in the same directory.  Then, open the example notebook file using the Jupyter client in order to execute and modify the code in the notebook file.
 
-NOTE: You must first have Numpy, Matplotlib, Jupyter, and Datetime modules installed. The Python code was developed using Python version 3.6.
+NOTE: The techindicators.py code was written in Python version 3.6.  The functions in techindicators.py depend on Numpy.  The code in the Jupyter notebook also depends on Matplotlib, Datetime, and mpl_finance.
+
+All the necessary modules may be installed using pip, with the exception of mpl_finance.  The mpl_finance module can be found at:
+
+https://github.com/matplotlib/mpl_finance
+
+and installed using:
+
+`pip install https://github.com/matplotlib/mpl_finance/archive/master.zip`
