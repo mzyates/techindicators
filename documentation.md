@@ -40,3 +40,7 @@ The kelt function calculates [Keltner Channels](http://stockcharts.com/school/do
 ## rstd
 
 The rstd function calculates a rolling [standard deviation](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:standard_deviation_volatility).  The function requires two parameters: an array of prices, and a number of periods used for calculating the standard deviation.  The function returns an array of the rolling standard deviation.
+
+## boll
+
+The boll function calculates the [Bollinger Bands<html>&reg;</html>](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:bollinger_bands).  The function requires four parameters: an array of prices, number of periods for calculating the center line SMA, multiplier for the standard deviation, and the number of periods used for calculating the rolling standard deviation.  The function returns the lower, center, and upper lines of the Bollinger Bands<html>&reg;</html>.
