@@ -32,3 +32,7 @@ The adl function calculates the [Accumulation/Distribution Line](http://stockcha
 ### macd
 
 The macd function calculates the [Moving Average Convergence/Divergence](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd).  The function requires four parameters: an array of prices, a number of periods for the fast EMA, a number of periods for the slow EMA, and a number of periods for the signal line.  The function returns two arrays: the MACD Line and Signal Line.  The difference between the MACD Line and Signal Line can be used to calculate the MACD histogram.
+
+## kelt
+
+The kelt function calculates [Keltner Channels](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:keltner_channels).  The function requires six parameters, arrays of high prices, low prices, and closing prices, the number of periods for calculating the center line EMA, the multiple for the ATR, and the number of periods for calculating the ATR.  The function returns the lower, center, and upper lines of the Keltner Channels.
