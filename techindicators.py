@@ -157,3 +157,12 @@ def boll(a,b,c,d):
         upper = center[d-b:]+c*stdboll
         lower = center[d-b:]-c*stdboll
     return lower,center,upper
+#
+# Percent price oscillator
+# a is an array of prices, b is the numer of periods for fast EMA
+# c is number of periods for slow EMA, 
+# d is number of periods for signal line
+def ppo(a,b,c,d):
+    line = ((ema(a,b)[c-b:]-ema(a,c))/ema(a,c))*100
+    signal = ema(line,d)
+    return line,signal
