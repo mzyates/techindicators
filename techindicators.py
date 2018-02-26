@@ -166,3 +166,14 @@ def ppo(a,b,c,d):
     line = ((ema(a,b)[c-b:]-ema(a,c))/ema(a,c))*100
     signal = ema(line,d)
     return line,signal
+#
+# TRIX
+# a is an array of prices, b is a period for each EMA in TRIX
+# c is a period for the signal line EMA
+def trix(a,b,c):
+    triema = ema(ema(ema(a,b),b),b)
+    line = np.zeros(len(triema)-1)
+    for i in range(1,len(triema)):
+        line[i-1] = ((triema[i]-triema[i-1])/triema[i-1])*100
+    signal = ema(line,c)
+    return line,signal
