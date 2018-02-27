@@ -11,7 +11,7 @@ The ema function is the [exponential moving average](http://stockcharts.com/scho
 
 ### kama
 
-The kama function is the [Kaufman adaptive moving average](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:kaufman_s_adaptive_moving_average).  Four parameters are required: a Numpy array of prices, the number of periods for the efficiency ratio calculation, the number of periods for the fastest exponential moving average constant, and the number of periods for the slowest exponential moving average constant.  The time periods are adjustable, but Kaufman origibnally suggested time periods of 10, 2, and 30 for the efficiency ration, fastest EMA, and slowest EMA, respectively.  The kama function returns the average as a Numpy array whose length is shorter than the price array by N-1, where N is the number of periods used for the effciency ratio.
+The kama function is the [Kaufman adaptive moving average](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:kaufman_s_adaptive_moving_average).  Four parameters are required: a Numpy array of prices, the number of periods for the efficiency ratio calculation, the number of periods for the fastest exponential moving average constant, and the number of periods for the slowest exponential moving average constant.  The time periods are adjustable, but Kaufman originally suggested time periods of 10, 2, and 30 for the efficiency ration, fastest EMA, and slowest EMA, respectively.  The kama function returns the average as a Numpy array whose length is shorter than the price array by N-1, where N is the number of periods used for the efficiency ratio.
 
 ### atr
 
@@ -52,3 +52,7 @@ The boll function calculates the [Bollinger Bands<html>&reg;</html>](http://stoc
 ### trix
 
 The trix function calculates the [TRIX indicator](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:trix).  The function requires three parameters: an array of prices, and a number of periods used for calculating the trimple EMA line, and the number of periods used for calculating the EMA of the signal.  The function returns the TRIX line and signal.
+
+## stoch
+
+The stoch function calculates the [Stochastic Oscillator](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:stochastic_oscillator_fast_slow_and_full).  The function requires six parameters: an array of low prices, and array of high prices, an array of closing prices, a look back period, a number of periods for calculating the %K moving average, and the number of periods for calculating the %D moving average.  The standard slow stochastic oscillator is calculated using the parameters (high,low,close,14,3,3).  The standard fast stochastic oscillator is calculated with the parameters (high,low,close,14,1,3).  Other look back and moving average periods may be selected to create a custom stochastic oscillator.
