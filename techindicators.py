@@ -177,3 +177,18 @@ def trix(a,b,c):
         line[i-1] = ((triema[i]-triema[i-1])/triema[i-1])*100
     signal = ema(line,c)
     return line,signal
+#
+# Stochastic oscillator
+# a is an array of high prices, b is array of low prices,
+# c is an array of closing prices, d is the look back period
+# e is number of periods for %K SMA, f is the number of
+# periods for %D SMA
+def stoch(a,b,c,d,e,f):
+    t = np.zeros(len(a))
+    for i in range(d-1,len(a)):
+        t[i] = ((c[i]-np.amin(b[i-(d-1):i+1]))/(np.amax(a[i-(d-1):i+1])-\
+         np.amin(b[i-(d-1):i+1])))*100
+    t = t[d-1:]
+    pk = sma(t,e)
+    pd = sma(pk,f)
+    return pk,pd
