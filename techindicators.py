@@ -192,3 +192,34 @@ def stoch(a,b,c,d,e,f):
     pk = sma(t,e)
     pd = sma(pk,f)
     return pk,pd
+#
+# Vortex indicator
+# a is array of high prices, b is array of low prices
+# c is array of close prices, d is number of periods
+def vortex(a,b,c,d):
+    tr = np.zeros(len(a))
+    vp = np.zeros(len(a))
+    vm = np.zeros(len(a))
+    trd = np.zeros(len(a))
+    vpd = np.zeros(len(a))
+    vmd = np.zeros(len(a))
+    result = np.zeros(len(a)-d+1)
+    tr[0] = a[0]-b[0]
+    for i in range(1,len(a)):
+        hl = a[i]-b[i]
+        hpc = np.fabs(a[i]-c[i-1])
+        lpc = np.fabs(b[i]-c[i-1])
+        tr[i] = np.amax(np.array([hl,hpc,lpc]))
+        vp[i] = np.fabs(a[i]-b[i-1])
+        vm[i] = np.fabs(b[i]-a[i-1])
+    for j in range(len(a)-d+1):
+        trd[d-1+j] = np.sum(tr[j:j+d])
+        vpd[d-1+j] = np.sum(vp[j:j+d])
+        vmd[d-1+j] = np.sum(vm[j:j+d])
+    trd = trd[d-1:]
+    vpd = vpd[d-1:]
+    vmd = vmd[d-1:]
+    vpn = vpd/trd
+    vmn = vmd/trd
+    return vpn,vmn
+        
