@@ -53,6 +53,10 @@ The boll function calculates the [Bollinger Bands<html>&reg;</html>](http://stoc
 
 The trix function calculates the [TRIX indicator](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:trix).  The function requires three parameters: an array of prices, and a number of periods used for calculating the trimple EMA line, and the number of periods used for calculating the EMA of the signal.  The function returns the TRIX line and signal.
 
-## stoch
+### stoch
 
-The stoch function calculates the [Stochastic Oscillator](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:stochastic_oscillator_fast_slow_and_full).  The function requires six parameters: an array of low prices, and array of high prices, an array of closing prices, a look back period, a number of periods for calculating the %K moving average, and the number of periods for calculating the %D moving average.  The standard slow stochastic oscillator is calculated using the parameters (high,low,close,14,3,3).  The standard fast stochastic oscillator is calculated with the parameters (high,low,close,14,1,3).  Other look back and moving average periods may be selected to create a custom stochastic oscillator.
+The stoch function calculates the [Stochastic Oscillator](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:stochastic_oscillator_fast_slow_and_full).  The function requires six parameters: an array of high prices, an array of low prices, an array of closing prices, a look back period, a number of periods for calculating the %K moving average, and the number of periods for calculating the %D moving average.  The standard slow stochastic oscillator is calculated using the parameters (high,low,close,14,3,3).  The standard fast stochastic oscillator is calculated with the parameters (high,low,close,14,1,3).  Other look back and moving average periods may be selected to create a custom stochastic oscillator.
+
+### vortex
+
+The vortex function calculates the [Vortex Indicator](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:vortex_indicator).  The function requires four parameters: an array of high prices, and array of low prices, an array of closing prices, and a number of periods used for calculation.  The function returns the +VM and -VM indicators. 
