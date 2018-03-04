@@ -64,3 +64,7 @@ The vortex function calculates the [Vortex Indicator](http://stockcharts.com/sch
 ### adx
 
 The adx function calculates the [Average Directional Index (ADX)](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_directional_index_adx). The function requires four parameters: an array of high prices, and array of low prices, an array of closing prices, and a number of periods used for calculation.  The function returns the positive directional indicator (+DI), negative directional indicator (-DI), and the ADX line. 
+
+### aroon
+
+The aroon function calculates the [Aroon Up/Down Indicators](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:aroon) and the [Aroon Oscillator](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:aroon_oscillator).  The function requires three parameters: an array of high prices, and array of low prices, and a number of periods for calculation.  The function returns the up indicator, down indicator, and oscillator.
