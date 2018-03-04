@@ -60,3 +60,7 @@ The stoch function calculates the [Stochastic Oscillator](http://stockcharts.com
 ### vortex
 
 The vortex function calculates the [Vortex Indicator](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:vortex_indicator).  The function requires four parameters: an array of high prices, and array of low prices, an array of closing prices, and a number of periods used for calculation.  The function returns the +VM and -VM indicators. 
+
+### adx
+
+The adx function calculates the [Average Directional Index (ADX)](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:average_directional_index_adx). The function requires four parameters: an array of high prices, and array of low prices, an array of closing prices, and a number of periods used for calculation.  The function returns the positive directional indicator (+DI), negative directional indicator (-DI), and the ADX line. 
