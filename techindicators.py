@@ -222,4 +222,51 @@ def vortex(a,b,c,d):
     vpn = vpd/trd
     vmn = vmd/trd
     return vpn,vmn
-        
+#
+# Average Directional Index (ADX)
+# a is array of high prices, b is array of low prices
+# c is array of close prices, d is number of periods
+def adx(a,b,c,d):
+    tr = np.zeros(len(a))
+    hph = np.zeros(len(a))
+    pll = np.zeros(len(a))
+    trd = np.zeros(len(a))
+    pdm = np.zeros(len(a))
+    ndm = np.zeros(len(a))
+    pdmd = np.zeros(len(a))
+    ndmd = np.zeros(len(a))
+    for i in range(1,len(a)):
+        hl = a[i]-b[i]
+        hpc = np.fabs(a[i]-c[i-1])
+        lpc = np.fabs(b[i]-c[i-1])
+        tr[i] = np.amax(np.array([hl,hpc,lpc]))
+        hph[i] = a[i]-a[i-1]
+        pll[i] = b[i-1]-b[i]
+    for j in range(1,len(a)):
+        if hph[j]>pll[j]:
+            if hph[j]>0:
+                pdm[j]=hph[j]
+        if pll[j]>hph[j]:
+            if pll[j]>0:
+                ndm[j]=pll[j]
+    trd[d]=np.sum(tr[1:d+1])
+    pdmd[d]=np.sum(pdm[1:d+1])
+    ndmd[d]=np.sum(ndm[1:d+1])
+    for k in range(d+1,len(a)):
+        trd[k]=trd[k-1]-trd[k-1]/d+tr[k]
+        pdmd[k]=pdmd[k-1]-pdmd[k-1]/d+pdm[k]
+        ndmd[k]=ndmd[k-1]-ndmd[k-1]/d+ndm[k]
+    trd = trd[d:]
+    pdmd = pdmd[d:]
+    ndmd = ndmd[d:]
+    p = (pdmd/trd)*100
+    n = (ndmd/trd)*100
+    diff = np.fabs(p-n)
+    summ = p+n
+    dx = 100*(diff/summ)
+    adx = np.zeros(len(dx))
+    adx[d-1] = np.mean(dx[0:d])
+    for l in range(d,len(dx)):
+        adx[l] = (adx[l-1]*(d-1)+dx[l])/d
+    adx = adx[d-1:]
+    return p,n,adx
