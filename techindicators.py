@@ -203,7 +203,6 @@ def vortex(a,b,c,d):
     trd = np.zeros(len(a))
     vpd = np.zeros(len(a))
     vmd = np.zeros(len(a))
-    result = np.zeros(len(a)-d+1)
     tr[0] = a[0]-b[0]
     for i in range(1,len(a)):
         hl = a[i]-b[i]
@@ -270,3 +269,20 @@ def adx(a,b,c,d):
         adx[l] = (adx[l-1]*(d-1)+dx[l])/d
     adx = adx[d-1:]
     return p,n,adx
+#
+# Aroon Oscillator
+# a is array of high prices, b is array of low prices
+# c is number of periods for calculation
+def aroon(a,b,c):
+    up = np.zeros(len(a))
+    down = np.zeros(len(a))
+    for i in range(c,len(a)):
+        up[i] = 100*(1-(i-np.amax(np.where(a==np.amax(a[i-c:i+1]))))/c)
+        down[i] = 100*(1-(i-np.amax(np.where(b==np.amin(b[i-c:i+1]))))/c)
+        if up[i]>100:
+            up[i]=100
+        if down[i]>100:
+            down[i]=100
+    up = up[c:]
+    down = down[c:]
+    return up,down,(up-down)
