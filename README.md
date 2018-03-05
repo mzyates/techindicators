@@ -3,9 +3,9 @@ The techindicators repository provides tools for technical analysis of open/high
 
 ## Why create another technical analysis tool?
 
-There are a number of tools already available for technical analysis using Python.  Most of them involve the use of the [Pandas](http://pandas.pydata.org/) data analysis library and/or the Python wrapper for the technical analysis library [TA-lib](http://www.ta-lib.org/).  So why re-invent the wheel?  The goal of writing this code is to simplyfy technical analysis of stock price data using the standard tools for numerical calculation with Python.  If you already know something about numerical calculations in Python with Numpy, using Pandas will seem foreign.  If you already know something about Python coding, the use of Ta-lib will likely make it more difficult to write your own code to do custom technical analysis.
+There are a number of tools already available for technical analysis using Python.  Most of them involve the use of the [Pandas](http://pandas.pydata.org/) data analysis library and/or the Python wrapper for the technical analysis library [TA-lib](http://www.ta-lib.org/).  So why re-invent the wheel?  The goal of writing this code is to simplify technical analysis of stock price data using the standard tools for numerical calculation with Python.  If you already know something about numerical calculations in Python with Numpy, using Pandas will seem foreign.  If you already know something about Python coding, the use of Ta-lib will likely make it more difficult to write your own code to do custom technical analysis.
 
-The techindicators repository is Python-centric and Numpy is the only dependency of the Python functions contained in techindicators.py.  The Jupyter notebook uses Matplotlib for plotting (the mpl_finance module is required for OHLC candlestick charts since Matplotlib decided to deprecate the finance module).
+The techindicators repository is Python-centric.  Numpy is the only dependency of the Python functions contained in techindicators.py.  The Jupyter notebook uses Matplotlib for plotting (the mpl_finance module is required for OHLC candlestick charts since Matplotlib decided to deprecate the finance module).
 
 ## Using the functions
 
