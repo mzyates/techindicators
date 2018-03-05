@@ -1,11 +1,11 @@
 # techindicators
-Python functions to calculate technical indicators from stock price data using Numpy.  A Jupyter notebook is also included demonstrating the calculation of technical indicators and plotting the resulting data.
+The techindicators repository provides tools for technical analysis of open/high/low/close (OHLC) stock price data.  The techindicators.py code contains Python 3.6 functions to calculate a variety of technical indicators (moving averages, RSI, MACD, CCI, etc.) using the Numpy library.  The associated Jupyter notebook demonstrates the use of all of the functions included in techindicators.py.  Plots shown in the Jupyter notebook were created using Matplotlib and the mpl_finance module.
 
-## Purpose
+## Why create another technical analysis tool?
 
-The Python functions and the associated Jupyter notebook are used to calculate various technical indicators (such as various moving averages, relative strength index (RSI), moving average convergence/divergence (MACD), etc) from a time series of open, high, low, close (OHLC) prices of stocks or other securities. A full list of the available functions is given in the documentation. Price data in comma separated variable format is imported as Numpy arrays. The technical indicator functions rely on Numpy for calculations.
+There are a number of tools already available for technical analysis using Python.  Most of them involve the use of the [Pandas](http://pandas.pydata.org/) data analysis library and/or the Python wrapper for the technical analysis library [TA-lib](http://www.ta-lib.org/).  So why re-invent the wheel?  The goal of writing this code is to simplyfy technical analysis of stock price data using the standard tools for numerical calculation with Python.  If you already know something about numerical calculations in Python with Numpy, using Pandas will seem foreign.  If you already know something about Python coding, the use of Ta-lib will likely make it more difficult to write your own code to do custom technical analysis.
 
-The code was written for those who would rather use Numpy matrices and arrays rather than Pandas dataframes for technical analysis calculations.  The Pandas library is not required.
+The techindicators repository is Python-centric and Numpy is the only dependency of the Python functions contained in techindicators.py.  The Jupyter notebook uses Matplotlib for plotting (the mpl_finance module is required for OHLC candlestick charts since Matplotlib decided to deprecate the finance module).
 
 ## Using the functions
 
