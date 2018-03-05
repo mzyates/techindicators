@@ -277,12 +277,8 @@ def aroon(a,b,c):
     up = np.zeros(len(a))
     down = np.zeros(len(a))
     for i in range(c,len(a)):
-        up[i] = 100*(1-(i-np.amax(np.where(a==np.amax(a[i-c:i+1]))))/c)
-        down[i] = 100*(1-(i-np.amax(np.where(b==np.amin(b[i-c:i+1]))))/c)
-        if up[i]>100:
-            up[i]=100
-        if down[i]>100:
-            down[i]=100
+        up[i] = 100*(1-(i-np.amax(np.where(a[0:i+1]==np.amax(a[i-c:i+1]))))/c)
+        down[i] = 100*(1-(i-np.amax(np.where(b[0:i+1]==np.amin(b[i-c:i+1]))))/c)
     up = up[c:]
     down = down[c:]
     return up,down,(up-down)
