@@ -76,3 +76,7 @@ The aroon function calculates the [Aroon Up/Down Indicators](http://stockcharts.
 ### chand
 
 The chand function calculated the [Chandelier Exit](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:chandelier_exit), which is a trailing stop loss based on a multiple of the ATR.  The function requires five parameters: high prices, low prices, closing prices, number of periods for ATR, the ATR multiple, and a string of either 'long' or 'short' to indicate which type of position is being held.
+
+### roc
+
+The roc function calculates the [Rate of Change (ROC)](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:rate_of_change_roc_and_momentum).  The function requires two parameters: an array of prices and a number of periods for calculation.
