@@ -282,3 +282,24 @@ def aroon(a,b,c):
     up = up[c:]
     down = down[c:]
     return up,down,(up-down)
+#
+# Chandelier Exits
+# a is array of high prices, b is array of low prices, 
+# c is array of closing prices, d is number of periods
+# e is multiplier for ATR, f is 'short' or 'long'
+def chand(a,b,c,d,e,f):
+    ch_atr = atr(a,b,c,d)
+    maxp = np.zeros(len(a))
+    if f == 'long':
+        for i in range(d-1,len(a)):
+            maxp[i] = np.amax(a[i-d+1:i])
+        maxp = maxp[d-1:]
+        result = maxp-ch_atr*e
+    elif f == 'short':
+        for i in range(d-1,len(a)):
+            maxp[i] = np.amin(b[i-d+1:i])
+        maxp = maxp[d-1:]
+        result = maxp+ch_atr*e
+    else:
+        print('The last parameter must be \'short\' or \'long\'')
+    return result
