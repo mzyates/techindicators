@@ -22,7 +22,7 @@ def ema(a,b):
 def wma(a,b):
     result = np.zeros(len(a)-b+1)
     for i in range(b-1,len(a)):
-        result[i-b+1] = np.sum(np.arange(b,0,-1)*a[i-b+1:i+1])\
+        result[i-b+1] = np.sum(np.arange(1,b+1,1)*a[i-b+1:i+1])\
         /np.sum(np.arange(1,b+1))
     return result
 # Kaufman's Adaptive Moving Average
@@ -317,3 +317,9 @@ def roc(a,b):
     for i in range(b,len(a)):
         result[i-b] = ((a[i]-a[i-b])/a[i-b])*100
     return result
+#
+# Coppock Curve
+# a is an array of prices, b is number of periods for long ROC
+# c is number of periods for short ROC, d is number of periods for WMA
+def copp(a,b,c,d):
+    return wma((roc(a,b)+roc(a,c)[b-c:]),d)
