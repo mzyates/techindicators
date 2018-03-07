@@ -309,3 +309,11 @@ def chand(a,b,c,d,e,f):
     else:
         print('The last parameter must be \'short\' or \'long\'')
     return result
+#
+# Rate of change (ROC)
+# a is an array of prices, b is a number of periods
+def roc(a,b):
+    result = np.zeros(len(a)-b)
+    for i in range(b,len(a)):
+        result[i-b] = ((a[i]-a[i-b])/a[i-b])*100
+    return result
