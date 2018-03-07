@@ -68,3 +68,7 @@ The adx function calculates the [Average Directional Index (ADX)](http://stockch
 ### aroon
 
 The aroon function calculates the [Aroon Up/Down Indicators](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:aroon) and the [Aroon Oscillator](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:aroon_oscillator).  The function requires three parameters: an array of high prices, and array of low prices, and a number of periods for calculation.  The function returns the up indicator, down indicator, and oscillator.
+
+### chand
+
+The chand function calculated the [Chandelier Exit](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:chandelier_exit), which is a trailing stop loss based on a multiple of the ATR.  The function requires five parameters: high prices, low prices, closing prices, number of periods for ATR, the ATR multiple, and a string of either 'long' or 'short' to indicate which type of position is being held.
