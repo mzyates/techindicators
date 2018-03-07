@@ -17,6 +17,14 @@ def ema(a,b):
         result[i] = result[i-1]+(a[i+b-1]-result[i-1])*(2/(b+1))
     return result
 #
+# Weighted Moving Average
+# a is an array of prices, b is a period for averaging
+def wma(a,b):
+    result = np.zeros(len(a)-b+1)
+    for i in range(b-1,len(a)):
+        result[i-b+1] = np.sum(np.arange(b,0,-1)*a[i-b+1:i+1])\
+        /np.sum(np.arange(1,b+1))
+    return result
 # Kaufman's Adaptive Moving Average
 # a is an array of prices, b is the period for the efficiency ratio
 # c is the period for the fast EMA, d is the period for the slow EMA
@@ -289,16 +297,14 @@ def aroon(a,b,c):
 # e is multiplier for ATR, f is 'short' or 'long'
 def chand(a,b,c,d,e,f):
     ch_atr = atr(a,b,c,d)
-    maxp = np.zeros(len(a))
+    maxp = np.zeros(len(a)-d+1)
     if f == 'long':
         for i in range(d-1,len(a)):
-            maxp[i] = np.amax(a[i-d+1:i])
-        maxp = maxp[d-1:]
+            maxp[i-d+1] = np.amax(a[i-d+1:i+1])
         result = maxp-ch_atr*e
     elif f == 'short':
         for i in range(d-1,len(a)):
-            maxp[i] = np.amin(b[i-d+1:i])
-        maxp = maxp[d-1:]
+            maxp[i-d+1] = np.amin(b[i-d+1:i+1])
         result = maxp+ch_atr*e
     else:
         print('The last parameter must be \'short\' or \'long\'')
