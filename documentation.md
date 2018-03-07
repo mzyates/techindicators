@@ -80,3 +80,7 @@ The chand function calculated the [Chandelier Exit](http://stockcharts.com/schoo
 ### roc
 
 The roc function calculates the [Rate of Change (ROC)](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:rate_of_change_roc_and_momentum).  The function requires two parameters: an array of prices and a number of periods for calculation.
+
+## copp
+
+The copp function calculates the [Coppock Curve](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:coppock_curve).  The Coppock curve is the weighted moving average (WMA) of the sum of two rates of change (ROC) calculated over two different time periods.  The function requires four parameters: an array of prices, a number of periods for the long ROC (14 is standard), a number of periods for the short ROC (11 is standard), and a number of periods for the WMA (10 is standard).
