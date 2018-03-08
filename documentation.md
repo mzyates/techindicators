@@ -84,3 +84,7 @@ The roc function calculates the [Rate of Change (ROC)](http://stockcharts.com/sc
 ### copp
 
 The copp function calculates the [Coppock Curve](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:coppock_curve).  The Coppock curve is the weighted moving average (WMA) of the sum of two rates of change (ROC) calculated over two different time periods.  The function requires four parameters: an array of prices, a number of periods for the long ROC (14 is standard), a number of periods for the short ROC (11 is standard), and a number of periods for the WMA (10 is standard).
+
+### force
+
+The force function calculates the [Force Index](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:force_index).  The Force Index is an exponential moving average of the product of trading volume and the difference between closing price and the closing price of the previous period.  The force function requires three parameters: closing prices, trading volumes, and a number of periods.
