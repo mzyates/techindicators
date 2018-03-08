@@ -323,3 +323,12 @@ def roc(a,b):
 # c is number of periods for short ROC, d is number of periods for WMA
 def copp(a,b,c,d):
     return wma((roc(a,b)+roc(a,c)[b-c:]),d)
+#
+# Force Index
+# a is closing price, b is volume
+# c is number of periods
+def force(a,b,c):
+    dif = np.zeros(len(a)-1)
+    for i in range(1,len(a)):
+        dif[i-1] = (a[i]-a[i-1])*b[i]
+    return ema(dif,c)
