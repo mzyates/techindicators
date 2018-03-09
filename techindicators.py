@@ -332,3 +332,14 @@ def force(a,b,c):
     for i in range(1,len(a)):
         dif[i-1] = (a[i]-a[i-1])*b[i]
     return ema(dif,c)
+#
+# Chaikin Money Flow (CMF)
+# a is high prices, b is low prices
+# c is closing prices, d is volume
+# e is number of periods
+def cmf(a,b,c,d,e):
+    mfv = (((c-b)-(a-c))/(a-b))*d
+    result = np.zeros(len(a)-e+1)
+    for i in range(len(a)-e+1):
+        result[i] = np.sum(mfv[i:i+e])/np.sum(d[i:i+e])
+    return result
