@@ -88,3 +88,7 @@ The copp function calculates the [Coppock Curve](http://stockcharts.com/school/d
 ### force
 
 The force function calculates the [Force Index](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:force_index).  The Force Index is an exponential moving average of the product of trading volume and the difference between closing price and the closing price of the previous period.  The force function requires three parameters: closing prices, trading volumes, and a number of periods.
+
+### cmf
+
+The cmf function calculates the [Chaikin Money Flow](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:chaikin_money_flow_cmf).  The function requires five parameters: high prices, low prices, closing prices, and a number of periods.  The default number of periods is 20, but this can be adjusted.  The cmf function returns the Chaikin Money Flow as an array.
