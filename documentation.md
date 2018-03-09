@@ -23,23 +23,23 @@ The atr function is [average true range (ATR)](http://stockcharts.com/school/dok
 
 ### rsi
 
-The rsi function calculates the [Relative Strength Index](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi).  The function requires two parameters: an array of prices, and a number of time periods for averaging.  The number of time periods is adjustable, but 14 is typically used.  The RSI is returned as an array that is shorter than the price array by N, where N is the number of periods used for averaging.
+The rsi function calculates the [Relative Strength Index (RSI)](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:relative_strength_index_rsi).  The function requires two parameters: an array of prices, and a number of time periods for averaging.  The number of time periods is adjustable, but 14 is typically used.  The RSI is returned as an array that is shorter than the price array by N, where N is the number of periods used for averaging.
 
 ### cci
 
-The cci function calculates the [Commodity Channel Index](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:commodity_channel_index_cci).  The function requires four parameters: an array of high prices, and array of low prices, and array of closing prices, and a number of time periods for averaging.  The number of time periods is adjustable, but a value of 20 is typically used.  The function returns the calculated cci values in an array that is shorter than the length of the price array by N-1, where N is the number of periods used for averaging.
+The cci function calculates the [Commodity Channel Index (CCI)](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:commodity_channel_index_cci).  The function requires four parameters: an array of high prices, and array of low prices, and array of closing prices, and a number of time periods for averaging.  The number of time periods is adjustable, but a value of 20 is typically used.  The function returns the calculated cci values in an array that is shorter than the length of the price array by N-1, where N is the number of periods used for averaging.
 
 ### adl
 
-The adl function calculates the [Accumulation/Distribution Line](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:accumulation_distribution_line).  The function requires four parameters: an array of high prices, and array of low prices, and array of closing prices, and a trading volume.  The function returns the adl values as an array whose length is equal to the length of the price arrays.
+The adl function calculates the [Accumulation/Distribution Line (ADL)](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:accumulation_distribution_line).  The function requires four parameters: an array of high prices, and array of low prices, and array of closing prices, and a trading volume.  The function returns the adl values as an array whose length is equal to the length of the price arrays.
 
 ### macd
 
-The macd function calculates the [Moving Average Convergence/Divergence](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd).  The function requires four parameters: an array of prices, a number of periods for the fast EMA, a number of periods for the slow EMA, and a number of periods for the signal line.  The function returns two arrays: the MACD Line and Signal Line.  The difference between the MACD Line and Signal Line can be used to calculate the MACD histogram.
+The macd function calculates the [Moving Average Convergence/Divergence (MACD)](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:moving_average_convergence_divergence_macd).  The function requires four parameters: an array of prices, a number of periods for the fast EMA, a number of periods for the slow EMA, and a number of periods for the signal line.  The function returns two arrays: the MACD Line and Signal Line.  The difference between the MACD Line and Signal Line can be used to calculate the MACD histogram.
 
 ### ppo
 
-The macd function calculates the [Percent Price Oscillator](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:price_oscillators_ppo).  The function requires four parameters: an array of prices, a number of periods for the fast EMA, a number of periods for the slow EMA, and a number of periods for the signal line.  The function returns two arrays: the PPO Line and Signal Line.  The difference between the PPO Line and Signal Line can be used to calculate the PPO histogram.
+The macd function calculates the [Percent Price Oscillator (PPO)](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:price_oscillators_ppo).  The function requires four parameters: an array of prices, a number of periods for the fast EMA, a number of periods for the slow EMA, and a number of periods for the signal line.  The function returns two arrays: the PPO Line and Signal Line.  The difference between the PPO Line and Signal Line can be used to calculate the PPO histogram.
 
 ### kelt
 
