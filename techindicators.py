@@ -343,3 +343,14 @@ def cmf(a,b,c,d,e):
     for i in range(len(a)-e+1):
         result[i] = np.sum(mfv[i:i+e])/np.sum(d[i:i+e])
     return result
+#
+# Chaikin Oscillator
+# a is high prices, b is low prices
+# c is closing prices, d is volume
+# e is number of periods for short EMA
+# f is number of periods for long EMA
+def chosc(a,b,c,d,e,f):
+    ch_adl = adl(a,b,c,d)
+    ch_short = ema(ch_adl,e)
+    ch_long = ema(ch_adl,f)
+    return (ch_short[(f-e):]-ch_long)
