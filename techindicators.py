@@ -365,3 +365,15 @@ def emv(a,b,c,d):
     br = ((c/100000000)/(a-b))
     br = br[1:]
     return sma(dm/br,d)
+#
+# Mass Index
+# a is high prices, b is low prices
+# c is a number of periods
+def mindx(a,b,c):
+    sema9 = ema((a-b),9)
+    dema9 = ema(sema9,9)
+    eratio = sema9[8:]/dema9
+    result = np.zeros(len(eratio)-c+1)
+    for i in range(len(eratio)-c+1):
+        result[i] = np.sum(eratio[i:i+c])
+    return result
