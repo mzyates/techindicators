@@ -354,3 +354,14 @@ def chosc(a,b,c,d,e,f):
     ch_short = ema(ch_adl,e)
     ch_long = ema(ch_adl,f)
     return (ch_short[(f-e):]-ch_long)
+#
+# Ease of Movement (EMV)
+# a is high prices, b is low prices
+# c is volume, d is number of periods
+def emv(a,b,c,d):
+    dm = np.zeros(len(a)-1)
+    for i in range(1,len(a)):
+        dm[i-1] = (a[i]+b[i])/2 - (a[i-1]+b[i-1])/2
+    br = ((c/100000000)/(a-b))
+    br = br[1:]
+    return sma(dm/br,d)
