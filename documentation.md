@@ -100,3 +100,7 @@ The chosc function calculates the [Chaikin Oscillator](http://stockcharts.com/sc
 ### emv
 
 The emv function calculates the [Ease of Movement (EMV)](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:ease_of_movement_emv) oscillator.  The function returns the ease of movement provided the parameters of high prices, low prices, volume, and a number of periods for calculation.  The standard number of periods is 14.
+
+### mindx
+
+The mindx function calculates the [Mass Index](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:mass_index).  The Mass Index is a measure of volatility based on a ratio of moving averages of the difference between high and low prices for each period.  When the Mass Index is high, there is an increased chance of a trend reversal.  The function requires three parameters: high prices, low prices, and a number of periods.  The standard number of periods is 25 and the standard trigger level for trend reversal is 27.
