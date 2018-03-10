@@ -95,4 +95,8 @@ The cmf function calculates the [Chaikin Money Flow](http://stockcharts.com/scho
 
 ### chosc
 
-The chosc function calculates the [Chaikin Oscillator](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:chaikin_oscillator) given the parameters of: high prices, low prices, closing prices, volume, number of periods for shorter exponential moving average, and number of periods for longer exponential moving average.  The standard oscillator calculation uses 3 periods for the shorter EMA, and 10 periods for the longer EMA. 
+The chosc function calculates the [Chaikin Oscillator](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:chaikin_oscillator) given the parameters of: high prices, low prices, closing prices, volume, number of periods for shorter exponential moving average, and number of periods for longer exponential moving average.  The standard oscillator calculation uses 3 periods for the shorter EMA, and 10 periods for the longer EMA.
+
+### emv
+
+The emv function calculates the [Ease of Movement (EMV)](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:ease_of_movement_emv) oscillator.  The function returns the ease of movement provided the parameters of high prices, low prices, volume, and a number of periods for calculation.  The standard number of periods is 14.
