@@ -104,3 +104,7 @@ The emv function calculates the [Ease of Movement (EMV)](http://stockcharts.com/
 ### mindx
 
 The mindx function calculates the [Mass Index](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:mass_index).  The Mass Index is a measure of volatility based on a ratio of moving averages of the difference between high and low prices for each period.  When the Mass Index is high, there is an increased chance of a trend reversal.  The function requires three parameters: high prices, low prices, and a number of periods.  The standard number of periods is 25 and the standard trigger level for trend reversal is 27.
+
+### mfi
+
+The mfi function calculates the [Money Flow Index (MFI)](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:money_flow_index_mfi). The MFI (also called volume weighted RSI), is an oscillator that uses the typical price and volume of each period. The mfi function requires parameters of high prices, low prices, closing prices, volume, and a number of periods for calculation. The standard number of periods is 14.
