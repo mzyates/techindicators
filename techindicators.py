@@ -377,3 +377,26 @@ def mindx(a,b,c):
     for i in range(len(eratio)-c+1):
         result[i] = np.sum(eratio[i:i+c])
     return result
+#
+# Money Flow Index (MFI)
+# a is high prices, b is low prices
+# c is closing prices, d is volume
+# e is number of periods
+def mfi(a,b,c,d,e):
+    tp = (a+b+c)/3
+    rmf = d*tp
+    pmf = np.zeros(len(a))
+    nmf = np.zeros(len(a))
+    pmfs = np.zeros(len(a))
+    nmfs = np.zeros(len(a))
+    for i in range(1,len(a)):
+        if tp[i]>tp[i-1]:
+            pmf[i] = rmf[i]
+        elif tp[i]<tp[i-1]:
+            nmf[i] = rmf[i]
+    for j in range(e,len(a)):
+        pmfs[j] = np.sum(pmf[j-e+1:j+1])
+        nmfs[j] = np.sum(nmf[j-e+1:j+1])
+    pmfs = pmfs[e:]
+    nmfs = nmfs[e:]
+    return (100-100/(1+pmfs/nmfs))
