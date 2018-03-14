@@ -108,3 +108,7 @@ The mindx function calculates the [Mass Index](http://stockcharts.com/school/dok
 ### mfi
 
 The mfi function calculates the [Money Flow Index (MFI)](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:money_flow_index_mfi). The MFI (also called volume weighted RSI), is an oscillator that uses the typical price and volume of each period. The mfi function requires parameters of high prices, low prices, closing prices, volume, and a number of periods for calculation. The standard number of periods is 14.
+
+### nvi
+
+The nvi function calculates the [Negative Volume Index (NVI](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:negative_volume_inde).  The single period percent change in price is added to the NVI on days when volume has declined from the previous day.  On days in which the volume has increased from the previous day, the NVI is left unchanged.  The signal line is an exponential moving average of the NVI.  The nvi function requires three parameters: closing prices, volume, and number of periods for EMA calculation.  The NVI and signal line are returned.
