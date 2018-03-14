@@ -400,3 +400,21 @@ def mfi(a,b,c,d,e):
     pmfs = pmfs[e:]
     nmfs = nmfs[e:]
     return (100-100/(1+pmfs/nmfs))
+#
+# Negative Volume Index (NVI)
+# a closing prices, b is volume
+# c is number of periods
+def nvi(a,b,c):
+    ppc = np.zeros(len(a))
+    pvc = np.zeros(len(a))
+    line = np.zeros(len(a))
+    line[0]=1000
+    for i in range(1,len(a)):
+        ppc[i]=100*((a[i]-a[i-1])/a[i-1])
+        pvc[i]=100*((b[i]-b[i-1])/b[i-1])
+        if pvc[i]<0:
+            line[i]=line[i-1]+ppc[i]
+        elif pvc[i]>0:
+            line[i]=line[i-1]
+    signal = ema(line,c)
+    return line,signal
