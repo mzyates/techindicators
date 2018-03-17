@@ -418,3 +418,16 @@ def nvi(a,b,c):
             line[i]=line[i-1]
     signal = ema(line,c)
     return line,signal
+#
+# On Balance Volume (OBV)
+# a is closing prices, b is volume
+def obv(a,b):
+    result = np.zeros(len(a))
+    for i in range(1,len(a)):
+        if a[i]>a[i-1]:
+            result[i]=result[i-1]+b[i]
+        elif a[i]<a[i-1]:
+            result[i]=result[i-1]-b[i]
+        else:
+            result[i]=result[i-1]
+    return result
