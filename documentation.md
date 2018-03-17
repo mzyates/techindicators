@@ -112,3 +112,7 @@ The mfi function calculates the [Money Flow Index (MFI)](http://stockcharts.com/
 ### nvi
 
 The nvi function calculates the [Negative Volume Index (NVI](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:negative_volume_inde).  The single period percent change in price is added to the NVI on days when volume has declined from the previous day.  On days in which the volume has increased from the previous day, the NVI is left unchanged.  The signal line is an exponential moving average of the NVI.  The nvi function requires three parameters: closing prices, volume, and number of periods for EMA calculation.  The NVI and signal line are returned.
+
+### obv
+
+The obv function calculates the [On Balance Volume (OBV)](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:on_balance_volume_obv).  The OBV is a running total of volume in which trading volume is added to the previous period's trading volume when price change is positive, and subtracted from the previous period's trading volume when price change is negative.  The obv function calculates the On Balance Volume given an array of closing prices and an array of trading volume.
