@@ -39,7 +39,7 @@ The macd function calculates the [Moving Average Convergence/Divergence (MACD)](
 
 ### ppo
 
-The macd function calculates the [Percent Price Oscillator (PPO)](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:price_oscillators_ppo).  The function requires four parameters: an array of prices, a number of periods for the fast EMA, a number of periods for the slow EMA, and a number of periods for the signal line.  The function returns two arrays: the PPO Line and Signal Line.  The difference between the PPO Line and Signal Line can be used to calculate the PPO histogram.
+The ppo function calculates the [Percentage Price Oscillator (PPO)](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:price_oscillators_ppo).  The function requires four parameters: an array of prices, a number of periods for the fast EMA, a number of periods for the slow EMA, and a number of periods for the signal line.  The function returns two arrays: the PPO Line and Signal Line.  The difference between the PPO Line and Signal Line can be used to calculate the PPO histogram.
 
 ### kelt
 
@@ -116,3 +116,7 @@ The nvi function calculates the [Negative Volume Index (NVI](http://stockcharts.
 ### obv
 
 The obv function calculates the [On Balance Volume (OBV)](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:on_balance_volume_obv).  The OBV is a running total of volume in which trading volume is added to the previous period's trading volume when price change is positive, and subtracted from the previous period's trading volume when price change is negative.  The obv function calculates the On Balance Volume given an array of closing prices and an array of trading volume.
+
+### pvo
+
+The pvo function calculates the [Percentage Volume Oscillator (PVO)](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:percentage_volume_oscillator_pvo).  The function requires four parameters: an array of volume, a number of periods for the fast EMA, a number of periods for the slow EMA, and a number of periods for the signal line.  The function returns two arrays: the PVO Line and Signal Line.  The difference between the PVO Line and Signal Line can be used to calculate the PVO histogram.
