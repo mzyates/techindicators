@@ -166,7 +166,7 @@ def boll(a,b,c,d):
         lower = center[d-b:]-c*stdboll
     return lower,center,upper
 #
-# Percent price oscillator
+# Percentage price oscillator
 # a is an array of prices, b is the numer of periods for fast EMA
 # c is number of periods for slow EMA, 
 # d is number of periods for signal line
@@ -431,3 +431,12 @@ def obv(a,b):
         else:
             result[i]=result[i-1]
     return result
+#
+# Percentage volume oscillator
+# a is an array of volume, b is the numer of periods for fast EMA
+# c is number of periods for slow EMA, 
+# d is number of periods for signal line
+def pvo(a,b,c,d):
+    line = ((ema(a,b)[c-b:]-ema(a,c))/ema(a,c))*100
+    signal = ema(line,d)
+    return line,signal
