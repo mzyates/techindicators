@@ -125,7 +125,7 @@ The pvo function calculates the [Percentage Volume Oscillator (PVO)](http://stoc
 
 The kst function calculates the [Pring's Know Sure Thing (KST](http://stockcharts.com/school/doku.php?id=chart_school:technical_indicators:know_sure_thing_kst) indicator line and signal line.  The KST indicator is based on the combined average rates of change in price on four different numbers of periods:
 
-KST=SMA1(ROC1)+2∗SMA1(ROC2)+3∗SMA3(ROC3)+4∗SMA4(ROC4)KST=SMA1(ROC1)+2∗SMA1(ROC2)+3∗SMA3(ROC3)+4∗SMA4(ROC4)
+KST=SMA1(ROC1)+2∗SMA1(ROC2)+3∗SMA3(ROC3)+4∗SMA4(ROC4)
 
 where "SMA" refers to the simple moving average, and "ROC" is the rate of change in price. The signal line is a simple moving of KST. Since the number of periods for each of the 4 rates of change are adjustable, and the number of periods for each simple moving average is adjustable, the calculation of KST involves a lot of parameters. The standard values are 10, 15, 20, and 30 periods for calculation of ROC1, ROC2, ROC3, and ROC4, respectively. Standard vales are 10, 10, 10, 15, and 9 periods for SMA1, SMA2, SMA3, SMA4, and the signal line SMA, respectively. Therefore, the standard call to the kst function would be:
 
