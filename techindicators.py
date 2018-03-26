@@ -25,6 +25,7 @@ def wma(a,b):
         result[i-b+1] = np.sum(np.arange(1,b+1,1)*a[i-b+1:i+1])\
         /np.sum(np.arange(1,b+1))
     return result
+#
 # Kaufman's Adaptive Moving Average
 # a is an array of prices, b is the period for the efficiency ratio
 # c is the period for the fast EMA, d is the period for the slow EMA
@@ -439,4 +440,20 @@ def obv(a,b):
 def pvo(a,b,c,d):
     line = ((ema(a,b)[c-b:]-ema(a,c))/ema(a,c))*100
     signal = ema(line,d)
+    return line,signal
+#
+# Pring's Know Sure Thing (KST)
+# a is an array of prices 
+# b, c, d, and e are periods for four rates of change
+# f, g, h, and i are periods for moving averages of ROC
+# j is the number of periods for signal line SMA
+# standard parameters are (close price,10,15,20,30,10,10,10,15,9)
+def kst(a,b,c,d,e,f,g,h,i,j):
+    aroc1 = sma(roc(a,b),f)
+    aroc2 = sma(roc(a,c),g)
+    aroc3 = sma(roc(a,d),h)
+    aroc4 = sma(roc(a,e),i)
+    line = aroc1[len(aroc1)-len(aroc4):]+2*aroc2[len(aroc2)-len(aroc4):]+\
+    3*aroc3[len(aroc3)-len(aroc4):]+4*aroc4
+    signal = sma(line,j)
     return line,signal
